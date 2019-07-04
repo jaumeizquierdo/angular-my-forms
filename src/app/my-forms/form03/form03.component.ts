@@ -18,6 +18,7 @@ export class Form03Component implements OnInit {
     email: 'Introduce tu email'
   };
 
+  // objeto que me sirve para validar. Por defecto están vacios
   public userData = {
     realname: '',
     username: '',
@@ -26,7 +27,7 @@ export class Form03Component implements OnInit {
     email: '',
     continent: '0',
     gender: 'H',
-    upTo18: false
+    upto18: false
   };
 
   public genders = {
@@ -85,7 +86,7 @@ export class Form03Component implements OnInit {
     }
   ];
 
-  botonDesactivado = true;
+  public botonDesactivado: boolean = true;
 
   checkButton() {
     this.botonDesactivado = (
@@ -96,7 +97,7 @@ export class Form03Component implements OnInit {
       this.userData.password !== this.userData.confirmPassword ||
       this.userData.email === '' ||
       this.userData.continent === '0' ||
-      this.userData.upTo18 === false
+      this.userData.upto18 === false
     );
   }
 
@@ -110,7 +111,7 @@ export class Form03Component implements OnInit {
     this.User.setEmail(this.userData.email);
     this.User.setContinent(this.userData.continent);
     this.User.setGender(this.userData.gender);
-    this.User.setUpTo18(this.userData.upTo18);
+    this.User.setUpTo18(this.userData.upto18);
   }
 
   ngOnInit() {

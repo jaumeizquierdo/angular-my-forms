@@ -1,3 +1,5 @@
+import * as moment from 'node_modules/moment/moment'
+
 export class FullUser {
 
   private id: string;
@@ -15,7 +17,7 @@ export class FullUser {
     this.realname = '';
     this.username = '';
     this.password = '';
-    this.singingUpDate = this.getActualDate();
+    this.singingUpDate = moment().format('DD-MM-YYYY');
     this.email = '';
     this.continent = '';
     this.gender = '';
@@ -24,7 +26,7 @@ export class FullUser {
 
   // setters
 
-  public setRealName(realname) {
+  public setRealname(realname) {
     this.realname = realname;
   }
 
@@ -49,7 +51,7 @@ export class FullUser {
   }
 
   public setUpto18(upto18) {
-    this.setUpto18 = upto18;
+    this.upto18 = upto18;
   }
 
   // getters
@@ -101,16 +103,5 @@ export class FullUser {
   }
 
   // Obtenemos fecha actual
-
-  private getActualDate(): string {
-    const actualDate = new Date();
-    let actualDay = actualDate.getDate().toString();
-    if (actualDay.length < 2) { actualDay = '0' + actualDay; }
-    let actualMonth = actualDate.getMonth().toString();
-    if (actualMonth.length < 2) { actualMonth = '0' + actualMonth; }
-    const actualYear = actualDate.getFullYear().toString();
-    const finalDate = actualDay + '-' + actualMonth + '-' + actualYear;
-    return finalDate;
-  }
 
 }

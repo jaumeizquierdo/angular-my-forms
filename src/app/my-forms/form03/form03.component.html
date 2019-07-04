@@ -46,19 +46,19 @@
     <div class="row">
       <div class="col-sm-2">
         <label>
-          <input type="radio" #{{genders.H.id}} [value]="genders.H.value" [name]="genders.H.name" checked [(ngModel)]="userData.gender">
+          <input type="radio" #{{genders.H.id}} [value]="genders.H.value" [name]="genders.H.name" [checked]="genders.H.checked" [(ngModel)]="userData.gender">
           {{genders.H.label}}
         </label>
       </div>
       <div class="col-sm-2">
         <label>
-          <input type="radio" #{{genders.M.id}} [value]="genders.M.value" [name]="genders.M.name" [(ngModel)]="userData.gender">
+          <input type="radio" #{{genders.M.id}} [value]="genders.M.value" [name]="genders.M.name" [checked]="genders.M.checked" [(ngModel)]="userData.gender">
           {{genders.M.label}}
         </label>
       </div>
       <div class="col-sm-4">
         <label>Mayor de edad:
-          <input type='checkbox' name="user18" #upTo18 value=true [(ngModel)]="userData.upTo18">
+          <input type='checkbox' name="upTo18" #upTo18 value="true" [(ngModel)]="userData.upto18">
         </label>
       </div>
     </div>
@@ -66,6 +66,6 @@
   </form>
   <div class="row"><br></div>
   <div class="row">
-    {{ User|json }}<br>
+    {{ User | json }}<br>
   </div>
 </div>

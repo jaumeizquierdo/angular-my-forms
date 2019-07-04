@@ -1,0 +1,32 @@
+<!--
+<input type="text"
+  class="form-control"
+  name="userNameField"
+  [(ngModel)]="userName"
+  required minlength="4" maxlength="10"
+  #userNameModel="ngModel">
+
+<div class="row alert alert-danger" *ngIf="mensajeDeError || (userNameModel.invalid && userNameModel.touched)">
+  <div *ngIf="userNameModel.invalid">
+    <h3>Error en el nombre de usuario</h3>
+    <span *ngIf="userNameModel.errors.required">
+      <p>Este campo es obligatorio</p>
+    </span>
+    <span *ngIf="userNameModel.errors.minlength">
+      <p>Debes teclear 4 caracteres o más</p>
+    </span>
+  </div>
+  <div *ngIf="errorPass">
+    <h3>Error en contraseña</h3>
+    <p>La contraseña es demasiado corta</p>
+  </div>
+  <div *ngIf="errorConfirmPass">
+    <h3>Error en confirmación de contraseña</h3>
+    <p>La confirmación no coincide con la contraseña</p>
+  </div>
+  <div *ngIf="errorLanguages">
+    <h3>Idiomas insuficientes</h3>
+    <p>Debes hablar, al menos, tres idiomas de la lista.</p>
+  </div>
+</div>
+-->

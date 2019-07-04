@@ -4,6 +4,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { Form01Component } from './form01/form01.component';
 import { Form02Component } from './form02/form02.component';
 import { Form03Component } from './form03/form03.component';
+import { Form04Component } from './form04/form04.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'f03',
     component: Form03Component
+  },
+  {
+    path: 'f04',
+    component: Form04Component
   }
 ];
 
