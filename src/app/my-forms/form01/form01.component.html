@@ -1,0 +1,34 @@
+<h2 class="mb-4">Login form 01</h2>
+
+<div class="card p-3">
+    <form>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" #username [placeholder]='placeholders.username'>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" #password [placeholder]='placeholders.userpass'>
+      </div>
+      <input type="button" class="btn btn-primary" (click) = 'getData(username, password)' #sendButton value="Login" />
+    </form>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 alert alert-success mt-5" *ngIf="(getUsername > '' && getPassword > '') else textError">
+        <p><strong>username:</strong> {{ getUsername }}</p>
+        <p class="mb-0"><strong>password:</strong> {{ getPassword }}</p>
+    </div>
+  </div>
+
+  <ng-template #textError>
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="alert alert-danger">
+          <strong>Falta el nombre de usuario, password o ambos</strong>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

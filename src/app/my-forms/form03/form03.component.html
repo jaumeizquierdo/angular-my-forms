@@ -1,0 +1,71 @@
+<div class='container'>
+  <h1>Tercer formulario</h1>
+  <form (change)="checkButton()">
+    <div class="row">
+      <div class="col-sm-4">
+        <label>Nombre real:
+          <input type='text' class='form-control' name="realName" #realnameField [placeholder]='placeholders.realname' [(ngModel)]='userData.realname'>
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label>Nombre de usuario:
+          <input type='text' class='form-control' name="userName" #usernameField [placeholder]='placeholders.username' [(ngModel)]='userData.username'>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <label>Contraseña:
+        <input type='password' class='form-control' name="userPass" #userPass [placeholder]='placeholders.userpass' [(ngModel)]='userData.password'>
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label>Repite contraseña:
+          <input type='password' class='form-control' name="confirmuserPass" #userConfirmPass [placeholder]='placeholders.userconfirmpass' [(ngModel)]='userData.confirmPassword'>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <label>Email:
+          <input type='email' class='form-control' name="userEmail" #userEmail [placeholder]='placeholders.email' [(ngModel)]='userData.email'>
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label>Continente:</label>
+        <select class="form-control" name="userContinent" [(ngModel)]="userData.continent">
+          <option *ngFor="let continent of continents" [value]="continent.value" [selected]="continent.selected" [disabled]="continent.disabled">{{continent.text}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Género:</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <label>
+          <input type="radio" #{{genders.H.id}} [value]="genders.H.value" [name]="genders.H.name" checked [(ngModel)]="userData.gender">
+          {{genders.H.label}}
+        </label>
+      </div>
+      <div class="col-sm-2">
+        <label>
+          <input type="radio" #{{genders.M.id}} [value]="genders.M.value" [name]="genders.M.name" [(ngModel)]="userData.gender">
+          {{genders.M.label}}
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label>Mayor de edad:
+          <input type='checkbox' name="user18" #upTo18 value=true [(ngModel)]="userData.upTo18">
+        </label>
+      </div>
+    </div>
+    <input type='button' (click)='saveUser()' class='btn btn-primary' #sendButton value='Aceptar' [disabled]="botonDesactivado">
+  </form>
+  <div class="row"><br></div>
+  <div class="row">
+    {{ User|json }}<br>
+  </div>
+</div>
